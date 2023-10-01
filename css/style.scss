@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
+.page {
+    overflow: hidden;
+    z-index: 1;
+}
+/* variables */
+$color_green: #1dcd8d;
+/* header */
+header {
+    position: sticky;
+    top: 0px;
+    height: 50px;
+    .icon {
+        cursor: pointer;
+        transition: 0.5s;
+    }
+}
+/* links */
+.links {
+    width: 300px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    transition: 1s ;
+    a {
+        padding: 20px 15px;
+        transition: 0.5s;
+        color: rgba(0,0,0,.5);
+        &:hover {
+            padding-left: 25px;
+            color: #21cd8f;
+        }
+    }
+    a:not(:last-of-type) {
+        border-bottom: 1px solid #ccc;
+    }
+}
+/* sections */
+.sections {
+    z-index: -1;
+    transition: 1s ;
+}
+/* home */
+.home {
+    background-color: $color_green;
+    .name {
+        border-left: 3px solid black;
+    }
+    .info {
+        @media (max-width: 767px) {
+            margin-bottom: 60px;
+        }
+        div {
+            letter-spacing: 4px;
+            line-height: 0.9;
+        }
+        button {
+            letter-spacing: 3px;
+        }
+    }
+}
+/* about */
+.about {
+    background-color: #f4f4f4;
+}
+/* services */
+.services {
+    background-color: #1A2529;
+    .info {
+        width: 70%;
+        @media (max-width: 769px) {
+            width: 100%;
+        }
+        .title {
+            color: $color_green;
+        }
+    }
+    .card {
+        background: #263237;
+        height: 100%;
+        .card-body {
+            div {
+                width: 70px;
+            }
+        }
+        .card-subtitle {
+            color: $color_green;
+        }
+    }
+}
+/* anonymous sec */
+.anonymous-sec {
+    background-color: #cdf3e5;
+    .card {
+        padding-right: 25px;
+        padding-left: 25px;
+        @media (max-width: 769px) {
+            padding-right: 10px;
+            padding-left: 10px;
+            margin-bottom: 30px;
+        }
+        .image {
+            width: 50px;
+        }
+    }
+}
+/* testimonials */
+.testimonials {
+    .sec-info {
+        @media (min-width: 768px) {
+            width: 45%;
+        }
+        h2 {
+            color: $color_green;
+        }
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 25px;
+        grid-column-gap: 40px;
+        justify-content: space-between;
+        @media (max-width: 769px) {
+            grid-template-columns: 1fr;
+        }
+        .my-card {
+            background-color: #f4f4f4;
+            img {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+            }
+            .info {
+                p {
+                    font-weight: 00;
+                }
+                h3 {
+                    color: $color_green;
+                }
+            }
+        }
+    }
+}
+/* contact */
+.contact {
+    background-color: #000000;
+    h2 {
+        margin-bottom: 100px;
+    }
+    .animated-img {
+        max-width: 100%;
+    }
+    .info {
+        h3 {
+            color: $color_green;
+        }
+        .social-icons {
+            a {
+                cursor: pointer;
+            }
+        }
+    }
+}
+/* go-to-top button*/
+.go-to-top{
+    width: 50px;
+    height: 50px;
+    background-color: $color_green;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}

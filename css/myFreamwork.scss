@@ -1,0 +1,285 @@
+// reset
+input,
+textarea{
+  outline: none;
+  margin: 0;
+}
+ul{
+  list-style: none;
+}
+button{
+  border: none;
+}
+.resize-none {
+  resize: none;
+}
+// ---start freamwork
+// mixins components and another stuffs
+@mixin break-point($point){
+  @if $point == mobile{
+    @media (max-width: 768px){
+      @content
+    }
+  } @else if $point == small{
+    @media (min-width: 768px) and (max-width: 991px){
+      @content
+    }
+  } @else if $point == medium{
+    @media (min-width: 992px) and (max-width: 1199px){
+      @content
+    }
+  } @else if $point == large{
+    @media (min-width: 1200px){
+      @content
+    }
+  }
+}
+@mixin border($width,$type,$color){
+  border: $width $type $color;
+}
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//flex and another stuffs
+.d-block{
+  display: block;
+}
+.d-inline-block {
+  display: inline-block;
+}
+.d-flex{
+  display: flex;
+}
+.wrap{
+  flex-wrap: wrap;
+}
+.no-wrap{
+  flex-wrap: no-wrap;
+}
+.column{
+  flex-direction: column;
+}
+.align-center{
+  align-items: center;
+}
+.flex-1{
+  flex: 1;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-space-between{
+  justify-content: space-between;
+}
+.justify-space-evenly{
+  justify-content: space-evenly;
+}
+.justify-right{
+  justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .d-mb-block {
+    display: block;
+  }
+  .d-mb-none {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .d-not-mb-block {
+    display: block;
+  }
+  .d-not-mb-none {
+    display: none;
+  }
+}
+@for $i from 1 through 12{
+  .gap-#{$i * 5}{
+    gap: #{$i * 5}px;
+  }
+}
+// container and another stuffs
+/*
+.container{
+  margin: auto;
+}
+.container{
+  @include break-point(mobile){
+    width: 95%;
+  }
+  @include break-point(small){
+    width: 85%;
+  }
+  @include break-point(medium){
+    width: 75%;
+  }
+  @include break-point(large){
+    width: 65%;
+  }
+}
+*/
+// font and another stuffs
+
+@for $i from 5 through 60{
+  .fs-#{$i}{
+    font-size: #{$i}px;
+  }
+  @media (min-width: 768px) {
+    .fs-not-mb-#{$i}{
+      font-size: #{$i}px;
+    }
+  }
+  .fs-mb-#{$i} {
+    @media (max-width: 768px) {
+      font-size: #{$i}px;
+    }
+  }
+}
+
+@for $i from 1 through 9{
+  .fw-#{$i*100}{
+    font-weight: #{$i * 100};
+  }
+}
+.t{
+  &-capitalize{
+    text-transform: capitalize;
+  }
+  &-uppercase{
+    text-transform: uppercase;
+  }
+  &-lowercase{
+    text-transform: lowercase;
+  }
+  &-center{
+    text-align: center;
+  }
+  &-right{
+    text-align: right;
+  }
+  &-left{
+    text-align: left;
+  }
+}
+// background and another stuffs
+.bg{
+  &-grey{
+    background-color: #c6cbcb;
+  }
+}
+@for $i from 1 through 20{
+  .r-#{$i}{
+    border-radius: #{$i}px;
+  }
+}
+.circle{
+  border-radius: 50%;
+}
+// color and another stuffs
+.c{
+  &-grey{
+    color: #343a40;
+  }
+}
+// padding margin another stuffs
+@for $i from 5 through 60{
+  .p{
+    &t-#{$i}{
+      padding-top: #{$i}px !important;
+    }
+    &r-#{$i}{
+      padding-right: #{$i}px !important;
+    }
+    &b-#{$i}{
+      padding-bottom: #{$i}px !important;
+    }
+    &l-#{$i}{
+      padding-left: #{$i}px !important;
+    }
+    &-#{$i}{
+      padding: #{$i}px !important;
+    }
+    &x-#{$i}{
+      padding-left: #{$i}px !important;
+      padding-right: #{$i}px !important;
+    }
+    &y-#{$i}{
+      padding-top: #{$i}px !important;
+      padding-bottom: #{$i}px !important;
+    }
+  }
+  .m{
+    &t-auto{
+      margin-top: auto !important;
+    }
+    &r-auto{
+      margin-right: auto !important;
+    }
+    &b-auto{
+      margin-bottom: auto !important;
+    }
+    &r-auto{
+      margin-right: auto !important;
+    }
+    &-auto{
+      margin: auto !important;
+    }
+    &x-auto{
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
+    &y-auto{
+      margin-top: auto !important;
+      margin-bottom: auto;
+    }
+    &t-#{$i}{
+      margin-top: #{$i}px;
+    }
+    &r-#{$i}{
+      margin-right: #{$i}px;
+    }
+    &b-#{$i}{
+      margin-bottom: #{$i}px !important;
+    }
+    &l-#{$i}{
+      margin-left: #{$i}px !important;
+    }
+    &-#{$i}{
+      margin: #{$i}px !important;
+    }
+    &x-#{$i}{
+      margin-left: #{$i}px !important;
+      margin-right: #{$i}px !important;
+    }
+    &y-#{$i}{
+      margin-top: #{$i}px !important;
+      margin-bottom: #{$i}px !important;
+    }
+  }
+}
+// width and another stuffs
+.w{
+  &-fit{
+    width: fit-content;
+  }
+  &-full{
+    width: 100%;
+  }
+}
+.h{
+  &-min-100vh{
+    min-height: 100vh;
+  }
+  &-100vh{
+    height: 100vh;
+  }
+  &-100{
+    min-height: 100%;
+  }
+}
+// over flow and another stuffs
+.overflow-hidden {
+  overflow: hidden;
+}
